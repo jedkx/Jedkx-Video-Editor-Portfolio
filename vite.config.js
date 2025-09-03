@@ -1,29 +1,42 @@
-import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import tailwindcss from "@tailwindcss/vite";
-import { fileURLToPath, URL } from "node:url";
+import { defineConfig } from "vite";
 
-// https://vitejs.dev/config/
-export default defineConfig(({ command }) => ({
-  plugins: [react(), tailwindcss()],
-  base: command === "build" ? "/Jedkx-Video-Editor-Portfolio/" : "/",
-  resolve: {
-    alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    allowedHosts: true,
+  },
+  esbuild: {
+    logOverride: {
+      'ignored-directive': 'silent', 
     },
   },
+  logLevel: 'info', 
   build: {
-    outDir: "dist",
-    assetsDir: "assets",
-    sourcemap: false,
-    minify: "terser",
     rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ["react", "react-dom"],
-          router: ["react-router-dom"],
-        },
+      onwarn(warning, warn) {
+        // ignore certain harmless warnings
+        if (
+          warning.message.includes('Module level directives') ||
+          warning.message.includes('"use client"')  ||
+          warning.message.includes('"was ignored"')
+        ) {
+          return; 
+        }
+
+        // FAIL build on unresolved imports
+        if (warning.code === 'UNRESOLVED_IMPORT') {
+          throw new Error(`Build failed due to unresolved import:\n${warning.message}`);
+        }
+
+        // FAIL build on missing exports (like your Input error)
+        if (warning.code === 'PLUGIN_WARNING' && /is not exported/.test(warning.message)) {
+          throw new Error(`Build failed due to missing export:\n${warning.message}`);
+        }
+
+        // other warnings: log normally
+        warn(warning);
       },
     },
   },
-}));
+});
