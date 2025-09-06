@@ -1,0 +1,16 @@
+/* Basit Header Color System */
+
+:root {
+    /* Header Ana Renkleri */
+    --header-main-color: #ffffff;           /* Header yazı rengi */
+    --header-hover-color: #ff0095;          /* Header hover rengi */
+    
+    /* Scrolled Ana Renkleri */
+    --header-scrolled-text: #ffffff;       /* Scrolled yazı rengi */
+    --header-scrolled-hover: #ff0095;      /* Scrolled hover rengi */
+    --header-scrolled: rgba(23, 23, 23, 0.98); /* Header scroll arkaplanı */
+    
+    /* Mobile Menu */
+    --mobile-line: #ffffff;           /* Mobile menu çizgi rengi */
+    --mobile-bg: transparent; /* Mobile menu arkaplan */
+}

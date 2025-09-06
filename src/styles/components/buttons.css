@@ -1,0 +1,253 @@
+/* Button Components & Hover Effects */
+
+/* Primary Button */
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--text-primary);
+  padding: 0.75rem 2rem;
+  border-radius: 0;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  transform: scale(1);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-primary);
+}
+
+.btn-primary:active {
+  transform: scale(0.95);
+}
+
+.btn-primary:focus {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  padding: 0.75rem 2rem;
+  border: 2px solid var(--border-primary);
+  border-radius: 0;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  transform: scale(1);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary);
+  color: var(--text-primary);
+  border-color: var(--primary-hover);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-primary);
+}
+
+.btn-secondary:active {
+  transform: scale(0.95);
+}
+
+.btn-secondary:focus {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Hero CTA Buttons */
+.btn-hero-primary {
+  background-color: var(--primary);
+  color: var(--text-primary);
+  padding: 1rem 2.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  transform: scale(1);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-hero-primary:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-xl);
+}
+
+.btn-hero-primary:active {
+  transform: scale(0.95);
+}
+
+.btn-hero-secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  padding: 1rem 2.5rem;
+  border: 2px solid var(--text-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  transform: scale(1);
+}
+
+.btn-hero-secondary:hover {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  transform: scale(1.05);
+}
+
+.btn-hero-secondary:active {
+  transform: scale(0.95);
+}
+
+/* Navigation Buttons */
+.btn-nav {
+  color: var(--nav-item);
+  font-weight: 500;
+  transition: color var(--transition-fast);
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.btn-nav:hover {
+  color: var(--nav-item-hover);
+}
+
+.btn-nav::after {
+  content: '';
+  position: absolute;
+  bottom: -0.25rem;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--nav-item-hover);
+  transition: width var(--transition-normal);
+}
+
+.btn-nav:hover::after {
+  width: 100%;
+}
+
+/* Contact Form Button */
+.btn-contact {
+  background-color: var(--primary);
+  color: var(--text-primary);
+  padding: 0.875rem 2rem;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  width: 100%;
+  max-width: 200px;
+}
+
+.btn-contact:hover {
+  background-color: var(--primary-hover);
+  box-shadow: var(--shadow-primary);
+}
+
+.btn-contact:focus {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Icon Buttons */
+.btn-icon {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: all var(--transition-fast);
+  border-radius: 50%;
+}
+
+.btn-icon:hover {
+  color: var(--primary);
+  background-color: var(--bg-hover);
+  transform: scale(1.1);
+}
+
+/* Play Button for Videos */
+.btn-play {
+  background-color: var(--primary);
+  color: var(--text-primary);
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.btn-play:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.1);
+  box-shadow: var(--shadow-primary);
+}
+
+/* Social Media Buttons */
+.btn-social {
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+  font-size: 1.25rem;
+  padding: 0.5rem;
+}
+
+.btn-social:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* Mobile Menu Button */
+.btn-mobile-menu {
+  background: none;
+  border: none;
+  color: var(--nav-item);
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: all var(--transition-fast);
+}
+
+.btn-mobile-menu:hover {
+  color: var(--nav-item-hover);
+}
+
+/* Scroll to Top Button */
+.btn-scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--primary);
+  color: var(--text-primary);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  opacity: 0;
+  transform: translateY(20px);
+  z-index: 40;
+}
+
+.btn-scroll-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-scroll-top:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-primary);
+}

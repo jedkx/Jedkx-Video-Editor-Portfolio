@@ -1,0 +1,128 @@
+/* About Section Styles */
+
+.about-section {
+  padding: 6rem 0;
+  background-color: var(--bg-white);
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 4rem 0;
+  }
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 2rem auto 0;
+  text-align: left;
+}
+
+.about-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  font-size: 1.125rem;
+}
+
+.about-content p:last-child {
+  margin-bottom: 0;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+  padding: 3rem 0;
+}
+
+.about-stat-item {
+  text-align: center;
+  padding: 2rem;
+  background: var(--color-background-white);
+  border: 1px solid var(--color-border-light);
+  transition: all 0.3s ease;
+}
+
+.about-stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.about-stat-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.about-stat-label {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.about-skills {
+  margin-top: 4rem;
+}
+
+.about-skills-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.about-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.about-skill-item {
+  background: var(--color-background-white);
+  padding: 1.5rem;
+  border: 1px solid var(--color-border-light);
+  transition: all 0.3s ease;
+}
+
+.about-skill-item:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.about-skill-name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.about-skill-description {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .about-stat-item {
+    padding: 1.5rem;
+  }
+  
+  .about-stat-number {
+    font-size: 2rem;
+  }
+  
+  .about-skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
